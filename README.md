@@ -1,2 +1,2 @@
-# cpp
+# C++
 Notes for learning C++
