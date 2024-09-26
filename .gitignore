@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Ignore any executables without extension
+*
+!*.*
+!*/
+
+# Ignore VSCode settings
+.vscode
