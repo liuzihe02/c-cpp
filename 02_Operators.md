@@ -8,6 +8,13 @@
 - **Constants**: constants are unmodifiable after initialization
   - `const float PI = 3.14;`
 
+### Type Conversions
+
+Type conversions are implicit when changing from a smaller datatype to a larger datatype (e.g. `float` to `double`), but must be explicitly stated when moving from larger to smaller datatype
+```cpp
+int x = (int) 5.0 //float must be explicitly cast to int
+```
+
 ## Operators
 
 **Arithmetic Operators**
