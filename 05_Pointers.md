@@ -24,7 +24,7 @@ Pointers are memory addresses, and manipulating the memory addresses is much mor
 
 Pointers are just variables storing integers, and these integers happen to be memory addresses of other variables like `x`. We access the value of `x` by dereferencing the pointer.
 
-<image src=image.png width=400>
+<image src=images/image.png width=400>
 
 The pointer `ptr` stores the integer `12310`.
 
@@ -184,7 +184,7 @@ We can create an array of strings, where is element is actually a pointer to a c
   - allows array to store multiple strings of different lengths efficiently, as each elem is only a pointer to the beginning of the string
   - we can do this because C-style strings have characters in contiguous memory!
 
-<img src="image-1.png" width=600>
+<img src="images/image-1.png" width=600>
 
 ```cpp
 const char *suitNames[] = {"Clubs", "Diamonds", "Spades", "Clubs"};

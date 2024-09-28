@@ -57,14 +57,27 @@ size_t size = arr.size();
 
 ## Strings
 
+The built-in string is `char*` or  `char[]` which is unwieldy. The std library includes `string` class that's much more powerful.
+
 ```cpp
-//declaring only
-string string_name ;
-//declaring and initialization
-string string_name = "CodeWithHarry";
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string s = "Hello";
+    s += " world!";
+    if (s == "Hello world!") {
+        std::cout << "Success!" << std::endl;
+    }
+    std::cout << s.substr(6, 6) << std::endl; // Prints "world!"
+    std::cout << s.find("world") << std::endl; // (prints "6")
+    std::cout << s.find('l', 5) << std::endl; // (prints "9")
+
+    return 0;
+}
 ```
 
-A string is basically a one dimensional array of characters, and can be initialized as such:
+A string can also be a one dimensional array of characters, and can be initialized as such:
 ```cpp
 char helloworld[] = “Hello, world!”
 ```
