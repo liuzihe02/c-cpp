@@ -2,7 +2,7 @@
 
 ## Arrays
 
-Stored as contiguous memory locations. C++ places no limits on the number of dimensions in an array.
+Built-in C-style arrays are stored as **contiguous** memory locations - each element's address is one after the previous element. C++ places no limits on the number of dimensions in an array.
 
 - Data of the same type stored in an array
 - Accessing any random item at any random position in a given array is very fast in an array.
@@ -31,6 +31,29 @@ Note that dimensions must be specified for multidimensional arrays, otherwise it
 **Accessing and modifying array**
 
 Very similar to Python, where we do `arr[2]=8` etc.
+
+### Array Methods
+
+In C++, built-in arrays like `int arr[]` are NOT objects and don't have member functions. That's why we can't do `array.size()`; this functionality is only for C++ STL containers like `std::array` or `std::vector`, but not for C-style arrays.
+
+**Arrays passed as functions**
+
+When you pass an array to a function, it decays to a pointer, and you lose the size information. Hence we often pass the size as a *separate* parameter:
+
+```cpp
+void function(int arr[], int size) {
+    // Use 'size' here
+}
+```
+
+**Using STL**
+
+```cpp
+#include <array>
+
+std::array<int, 5> arr = {1, 2, 3, 4, 5};
+size_t size = arr.size();
+```
 
 ## Strings
 

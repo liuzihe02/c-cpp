@@ -68,7 +68,7 @@ Output:
 A local variable was first declared - within the body of a function, a local variable takes precedence over a global variable with the same name. But once we go into `func` call stack, it considers the global variable `a` which is 5
 
 - Unlike python where the inner function variables can access outside its scope, in C++ variables can only access local variables, global variables, and params passed to it
-- global variables are accessible everywhere unless shadowed by a local variable; functions can access this directly if theres's no local variable with the same name
+- global variables are accessible everywhere unless shadowed by a local variable; functions can *access this directly* if theres's no local variable with the same name
 
 ### Declaring same variables in the same scope
 
