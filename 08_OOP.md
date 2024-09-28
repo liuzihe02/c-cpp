@@ -95,7 +95,7 @@ public:
     //this is the FUNCTION PROTOTYPE
     void printName();
 };
-
+//must use scope operator :: here, if u wanna define outside the class
 void Employee::printName()
 {
     cout << eName << endl;
