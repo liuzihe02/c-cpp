@@ -225,6 +225,97 @@ public:
 };
 ```
 
+### Copy Constructors
+
+Used when you want to initialize a new object with the values of another object of the same class. If no copy constructor is written in the program compiler will supply its own copy constructor. 
+
+```cpp
+class class_name
+{
+    //default acces here is private, when no access is stated at the beginning of class declaration
+    int a;
+public:
+    // Default constructor
+    class_name(int val=0) 
+    {
+        a = val;
+    }
+
+    // Copy constructor, make &obj constant to be safe
+    class_name(const class_name &obj)
+    {
+        a = obj.a;
+    }
+};
+```
+
+Initialize a copy:
+```cpp
+class_name original{100};  // Create an original object
+class_name copy{original};  // This calls the copy constructor
+```
+
+
+### Member Initialization List
+
+Used when initializing the data members of a class
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Point {
+private:
+	int x;
+	int y;
+
+public:
+	Point(int i = 0, int j = 0): x(i), y(j) {}
+	/* The above use of Initializer list is optional as the
+		constructor can also be written as:
+		Point(int i = 0, int j = 0) {
+			x = i;
+			y = j;
+		}
+	*/
+
+	int getX() const { return x; }
+	int getY() const { return y; }
+};
+
+int main()
+{
+	Point t1(10, 15);
+	cout << "x = " << t1.getX() << ", ";
+	cout << "y = " << t1.getY();
+	return 0;
+}
+```
+
+## Destructors
+
+The default destructor calls the destructor of each of the instance members. If this is not good enough, we need to write a custom destructor. The most common use case is allocating a pointer with `new`. A pointer (to any type) is a primitive, and the destructor just makes the pointer itself go away, without touching the pointed to memory. So the default destructor of a pointer does not have the right behavior for us (it will leak memory), hence we need a delete call in the destructor.
+
+Syntax:
+```cpp
+class_name {
+public:
+     ~class_name();
+}
+
+class_name :: ~class_name() {
+    // some instructions
+}
+```
+
+### `delete`
+
+- `delete` is used to free memory allocated for a single object using `new`, like `newInteger = new int`
+- `delete[]` is used to free memory allocated for an array of objects using `new[]`, like `newArray = new int[size]`. Deletes all objects in the array
+
+If you use `delete` without `[]` on an array, this typically only destroys the first object, which causes memory leaks.
+
+
 ## Encapsulation
 
 Encapsulation is considered a good practice where one should always *make attributes private* for them to become non-modifiable until needed. Once members are made private, methods to access them or change them should be declared.
