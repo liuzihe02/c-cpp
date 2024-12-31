@@ -26,7 +26,7 @@ int main()
 
 ## Class Attributes and Methods
 
-We use class members and static members interchangeably. Static members have the same properties as global variables, but they can only be referenced via the class: either in class methods, via a class instance (`someObject.staticVariable`, or via `className::variable`
+We use class members and static members interchangeably. Static members have the same properties as global variables, but they can only be referenced via the class: either in class methods, via a class instance (`someObject.staticVariable`, or via `className::variable`)
 
 ### Class Attributes
 
