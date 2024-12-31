@@ -36,5 +36,5 @@
 !*.*
 !*/
 
-# Ignore VSCode settings
-.vscode
+# Ignore VSCode settings folder
+.vscode/
