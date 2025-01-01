@@ -100,7 +100,7 @@ int main()
 }
 ```
 
-## Wild Poitners
+## Wild Pointers
 
 Uninitialized pointers are known as wild pointers because they point to some arbitrary memory location while they are not assigned to any other memory location. This may even cause a program to crash or behave unpredictably at times.
 
